@@ -1,0 +1,283 @@
+/* ============================================
+   NoteApp – Global Dark Theme
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-dark:        #0f172a;
+  --bg-card:        #1e293b;
+  --bg-input:       #0f172a;
+  --accent-blue:    #3b82f6;
+  --accent-purple:  #8b5cf6;
+  --accent-cyan:    #06b6d4;
+  --accent-red:     #ef4444;
+  --accent-yellow:  #f59e0b;
+  --accent-green:   #22c55e;
+  --text-light:     #f1f5f9;
+  --text-muted:     #94a3b8;
+  --border:         #334155;
+}
+
+/* ── Base ─────────────────────────────────── */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ── Navbar ───────────────────────────────── */
+.navbar {
+  background-color: var(--bg-card) !important;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.35rem;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-link {
+  color: var(--text-muted) !important;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: var(--text-light) !important;
+}
+
+/* ── Cards / Panels ───────────────────────── */
+.bg-light-dark {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+/* ── Form controls ────────────────────────── */
+.form-control,
+.form-control:focus {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  border-radius: 8px;
+}
+.form-control:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+.form-control::placeholder {
+  color: #475569;
+}
+.form-label {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+}
+
+/* ── Buttons ──────────────────────────────── */
+.btn-info {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-info:hover,
+.btn-info:focus {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+.btn-danger {
+  background: linear-gradient(135deg, var(--accent-red), #dc2626);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-danger:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+.btn-warning {
+  background: linear-gradient(135deg, var(--accent-yellow), #d97706);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-warning:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+.btn-success {
+  background: linear-gradient(135deg, var(--accent-green), #16a34a);
+  border: none;
+  color: #fff !important;
+  font-weight: 600;
+}
+.btn-outline-light {
+  border-color: var(--border);
+  color: var(--text-muted) !important;
+}
+.btn-outline-light:hover {
+  background-color: var(--border);
+  color: var(--text-light) !important;
+}
+
+/* ── Note Card ────────────────────────────── */
+.note-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.note-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  border-color: var(--accent-blue);
+}
+.note-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.45rem;
+  word-break: break-word;
+}
+.note-body {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.note-date {
+  font-size: 0.72rem;
+  color: #475569;
+}
+.note-edited-badge {
+  font-size: 0.65rem;
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 20px;
+  padding: 1px 7px;
+  margin-left: 6px;
+}
+
+/* ── Modal ────────────────────────────────── */
+.modal-content {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--text-light);
+}
+.modal-header {
+  border-bottom: 1px solid var(--border);
+}
+.modal-footer {
+  border-top: 1px solid var(--border);
+}
+.btn-close {
+  filter: invert(1) grayscale(1);
+}
+
+/* ── Section headings ─────────────────────── */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.divider-gradient {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  border-radius: 2px;
+  margin: 0.4rem 0 1.4rem;
+}
+
+/* ── Auth form card ───────────────────────── */
+.auth-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+}
+
+/* ── Hero / Landing ───────────────────────── */
+.hero-section {
+  min-height: calc(100vh - 130px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 460px;
+  margin: 0 auto 2rem;
+  line-height: 1.65;
+}
+.feature-pill {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: #93c5fd;
+  border-radius: 30px;
+  padding: 5px 14px;
+  font-size: 0.82rem;
+}
+
+/* ── Footer ───────────────────────────────── */
+footer {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+/* ── Alert overrides ──────────────────────── */
+.alert-danger {
+  background-color: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  border-radius: 8px;
+}
+.alert-success {
+  background-color: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #86efac;
+  border-radius: 8px;
+}
+
+/* ── Spinner colour ───────────────────────── */
+.text-info { color: var(--accent-cyan) !important; }
+
+/* ── Scrollbar ────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
