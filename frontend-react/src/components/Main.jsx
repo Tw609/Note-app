@@ -18,30 +18,36 @@ const Main = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-9">
-            <h1 className="hero-title">Your Notes,<br />Anywhere.</h1>
+            <h1 className="hero-title">
+              Your Notes,
+              <br />
+              Anywhere.
+            </h1>
             <p className="hero-sub">
               A simple, fast, and secure note-taking app powered by a REST API.
               Create, edit, and delete your notes — all synced to your account.
             </p>
 
             {isLoggedIn ? (
-              <Link to="/dashboard" className="btn btn-info btn-lg px-5">
+              <Link to="/dashboard" className="px-5 btn btn-info btn-lg">
                 Go to My Notes →
               </Link>
             ) : (
-              <div className="d-flex gap-3 justify-content-center flex-wrap">
-                <Link to="/register" className="btn btn-info btn-lg px-5">
+              <div className="flex-wrap gap-3 d-flex justify-content-center">
+                <Link to="/register" className="px-5 btn btn-info btn-lg">
                   Get Started
                 </Link>
-                <Link to="/login" className="btn btn-outline-light btn-lg px-4">
+                <Link to="/login" className="px-4 btn btn-outline-light btn-lg">
                   Login
                 </Link>
               </div>
             )}
 
-            <div className="d-flex gap-2 justify-content-center flex-wrap mt-5">
+            <div className="flex-wrap gap-2 mt-5 d-flex justify-content-center">
               {FEATURES.map((f) => (
-                <span key={f} className="feature-pill">{f}</span>
+                <span key={f} className="feature-pill">
+                  {f}
+                </span>
               ))}
             </div>
           </div>

@@ -12,7 +12,8 @@ class RegisterView(generics.CreateAPIView):
 
 class ProfileView(generics.RetrieveUpdateAPIView):
     """GET  /api/v1/profile/  →  return the logged-in user's profile
-       PATCH /api/v1/profile/  →  update username / email / name / password"""
+    PATCH /api/v1/profile/  →  update username / email / name / password"""
+
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
     # Use PATCH so the frontend only needs to send the fields it changed

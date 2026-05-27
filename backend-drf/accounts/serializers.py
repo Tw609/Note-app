@@ -30,24 +30,36 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 class ProfileSerializer(serializers.ModelSerializer):
     """Read / update the logged-in user's own profile."""
+
     current_password = serializers.CharField(
-        write_only=True, required=False, allow_blank=True,
+        write_only=True,
+        required=False,
+        allow_blank=True,
         style={"input_type": "password"},
     )
     new_password = serializers.CharField(
-        write_only=True, required=False, allow_blank=True,
-        min_length=8, style={"input_type": "password"},
+        write_only=True,
+        required=False,
+        allow_blank=True,
+        min_length=8,
+        style={"input_type": "password"},
         error_messages={"min_length": "New password must be at least 8 characters."},
     )
-    note_count  = serializers.SerializerMethodField(read_only=True)
+    note_count = serializers.SerializerMethodField(read_only=True)
     date_joined = serializers.DateTimeField(read_only=True)
 
     class Meta:
         model = User
         fields = [
-            "id", "username", "email", "first_name", "last_name",
-            "date_joined", "note_count",
-            "current_password", "new_password",
+            "id",
+            "username",
+            "email",
+            "first_name",
+            "last_name",
+            "date_joined",
+            "note_count",
+            "current_password",
+            "new_password",
         ]
         read_only_fields = ["id", "date_joined", "note_count"]
 
@@ -77,7 +89,9 @@ class ProfileSerializer(serializers.ModelSerializer):
             new_username != instance.username
             and User.objects.filter(username=new_username).exists()
         ):
-            raise serializers.ValidationError({"username": "This username is already taken."})
+            raise serializers.ValidationError(
+                {"username": "This username is already taken."}
+            )
 
         for attr, value in validated_data.items():
             setattr(instance, attr, value)

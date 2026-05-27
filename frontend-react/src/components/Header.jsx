@@ -23,36 +23,45 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
       <div className="container">
-        <Link className="navbar-brand" to="/">📝 NoteApp</Link>
+        <Link className="navbar-brand" to="/">
+          📝 NoteApp
+        </Link>
 
         <button
-          className="navbar-toggler border-0"
+          className="border-0 navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainNav"
           aria-controls="mainNav"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>
 
         <div className="collapse navbar-collapse" id="mainNav">
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
             </li>
 
             {isLoggedIn ? (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/dashboard">My Notes</Link>
+                  <Link className="nav-link" to="/dashboard">
+                    My Notes
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/profile">Profile</Link>
+                  <Link className="nav-link" to="/profile">
+                    Profile
+                  </Link>
                 </li>
                 <li className="nav-item ms-lg-2">
-                  <button className="btn btn-danger btn-sm px-3" onClick={handleLogout}>
+                  <button
+                    className="px-3 btn btn-danger btn-sm"
+                    onClick={handleLogout}>
                     Logout
                   </button>
                 </li>
@@ -60,10 +69,12 @@ const Header = () => {
             ) : (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">Login</Link>
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
                 </li>
                 <li className="nav-item ms-lg-2">
-                  <Link className="btn btn-info btn-sm px-3" to="/register">
+                  <Link className="px-3 btn btn-info btn-sm" to="/register">
                     Register
                   </Link>
                 </li>
