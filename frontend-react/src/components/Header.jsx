@@ -14,7 +14,7 @@ const Header = () => {
         await axiosInstance.post("/token/blacklist/", { refresh });
       }
     } catch {
-      // Even if blacklist fails, still log out locally
+      // Still log out locally even if blacklist request fails
     }
     logout();
     navigate("/");
@@ -47,6 +47,9 @@ const Header = () => {
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/dashboard">My Notes</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/profile">Profile</Link>
                 </li>
                 <li className="nav-item ms-lg-2">
                   <button className="btn btn-danger btn-sm px-3" onClick={handleLogout}>

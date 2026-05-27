@@ -6,8 +6,7 @@ from .serializers import NoteSerializer
 
 class NoteListCreate(generics.ListCreateAPIView):
     """GET /api/v1/notes/  →  list current user's notes
-    POST /api/v1/notes/ →  create a new note"""
-
+       POST /api/v1/notes/ →  create a new note"""
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
 
@@ -20,9 +19,8 @@ class NoteListCreate(generics.ListCreateAPIView):
 
 class NoteRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     """GET    /api/v1/notes/<id>/  →  get one note
-    PATCH  /api/v1/notes/<id>/  →  edit a note
-    DELETE /api/v1/notes/<id>/  →  delete a note"""
-
+       PATCH  /api/v1/notes/<id>/  →  edit a note
+       DELETE /api/v1/notes/<id>/  →  delete a note"""
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
 

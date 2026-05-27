@@ -9,6 +9,7 @@ import Main from "./components/Main";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/dashboard/Dashboard";
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -19,36 +20,16 @@ function App() {
 
           <div className="flex-grow-1">
             <Routes>
-              {/* Public landing page */}
+              {/* Public landing */}
               <Route path="/" element={<Main />} />
 
-              {/* Public-only: redirect to /dashboard if already logged in */}
-              <Route
-                path="/login"
-                element={
-                  <PublicRoute>
-                    <Login />
-                  </PublicRoute>
-                }
-              />
-              <Route
-                path="/register"
-                element={
-                  <PublicRoute>
-                    <Register />
-                  </PublicRoute>
-                }
-              />
+              {/* Public-only pages */}
+              <Route path="/login"    element={<PublicRoute><Login /></PublicRoute>} />
+              <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
 
-              {/* Private: redirect to /login if not logged in */}
-              <Route
-                path="/dashboard"
-                element={
-                  <PrivateRoute>
-                    <Dashboard />
-                  </PrivateRoute>
-                }
-              />
+              {/* Private pages */}
+              <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="/profile"   element={<PrivateRoute><Profile /></PrivateRoute>} />
 
               {/* Catch-all */}
               <Route path="*" element={<Navigate to="/" replace />} />
